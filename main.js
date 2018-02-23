@@ -1,3 +1,5 @@
+'use strict';
+
 const quiz = [
     { name: "Superman",realName: "Clark Kent" },
     { name: "Wonderwoman",realName: "Dianna Prince" },
@@ -48,6 +50,7 @@ teardown(){
 
 const game = {
     start(quiz){
+        console.log('start() invoked');
         this.score = 0;
         this.questions = [...quiz];
         view.setup();
@@ -63,6 +66,7 @@ countdown() {
       }
 },
 ask(name){
+    console.log('ask() invoked');
     if(this.questions.length > 0) {
     this.question = this.questions.pop();
     const question = `What is ${this.question.name}'s real name?`;
@@ -72,6 +76,7 @@ ask(name){
     }
 },
 check(event){
+    console.log('check(event) invoked');
     event.preventDefault();
     const response = view.response.answer.value;
     const answer = this.question.realName;
@@ -86,6 +91,7 @@ check(event){
     this.ask();
 },
 gameOver(){
+    console.log('gameOver() invoked');
     view.render(view.info,`Game Over, you scored ${this.score} point${this.score !== 1 ? 's' : ''}`);
     view.teardown();
     clearInterval(this.timer);
