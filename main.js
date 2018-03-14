@@ -2,6 +2,7 @@
 
 // Quiz Ninja game created while following along/ reading "Javascript: Novice to Ninja" book. //
 
+// Experiencing CORS error, 'Access-Control-Allow-Origin' header has a value 'https://s.codepen.io' that is not equal to the supplied origin.
 const url = 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/123941/questions.json';
 
 fetch(url)
